@@ -6,4 +6,4 @@ This is a repository hosting NREL's solpos (solar position calculation) library.
 
 - Include Guards
 - Naming (`solpos00.h` ⇒ `solpos.h`) 
-- CMake Library
+- CMake Library (compiled with C++)
