@@ -7,13 +7,13 @@ project(
 )
 
 # Create Libraries
-add_library(solpos_solpos STATIC)
+add_library(solpos_solpos INTERFACE)
 add_library(solpos::solpos ALIAS solpos_solpos)
+set_property(TARGET solpos_solpos PROPERTY EXPORT_NAME solpos)
 
-# Add Sources
-target_sources(
-        solpos_solpos
-        PRIVATE solpos.c
-        PUBLIC solpos.h
+# Add include directories
+target_include_directories(solpos_solpos
+        INTERFACE
+        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
 )
-set_target_properties(solpos_solpos PROPERTIES LINKER_LANGUAGE CXX)
+
